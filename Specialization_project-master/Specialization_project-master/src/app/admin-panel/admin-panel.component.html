@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank- admin</title>
+</head>
+<body>
+    <h1 class = "text-center head"> Welcome Admin</h1>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active">User List</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <th>Id</th>
+                        <th>firstname</th>
+                        <th>lastname</th>
+                        <th>adhar</th>
+                        <th>DOB</th>
+                        <th>Email</th>
+                        <th>Bank UID</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{user.id}}</td>
+                            <td>{{user.firstname}}</td>
+                            <td>{{user.lastname}}</td>
+                            <td>{{user.adhar}}</td>
+                            <td>{{user.dob}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.userbank.uid}}</td>
+                            <td><button class="btn btn-primary" (click)="viewDetails(user.id)">View Account</button></td>
+                            <td><button class="btn btn-secondary" (click)="updateUser(user.id)">Update</button></td>
+                            <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Delete Account</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <span> All rights Reserved 2022 @ArizonaInvestments</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
